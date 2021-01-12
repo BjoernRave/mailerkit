@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -33,14 +33,14 @@
   },
   "name": "mailerkit",
   "author": "BjoernRave",
-  "module": "dist/mailkit.esm.js",
+  "module": "dist/mailerkit.esm.js",
   "size-limit": [
     {
-      "path": "dist/mailkit.cjs.production.min.js",
+      "path": "dist/mailerkit.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/mailkit.esm.js",
+      "path": "dist/mailerkit.esm.js",
       "limit": "10 KB"
     }
   ],
@@ -67,6 +67,7 @@
     "preview-email": "^3.0.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-html-email": "^3.0.0"
+    "react-html-email": "^3.0.0",
+    "styled-components": "^5.2.1"
   }
 }

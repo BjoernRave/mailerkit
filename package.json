@@ -1,0 +1,72 @@
+{
+  "version": "0.1.1",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "mailerkit",
+  "author": "BjoernRave",
+  "module": "dist/mailkit.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/mailkit.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/mailkit.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.9.1",
+    "@types/inline-css": "^0.0.33",
+    "@types/nodemailer": "^6.4.0",
+    "@types/preview-email": "^2.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-html-email": "^3.0.0",
+    "@types/styled-components": "^5.1.7",
+    "husky": "^4.3.7",
+    "size-limit": "^4.9.1",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.1.0",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.826.0",
+    "handlebars": "^4.7.6",
+    "inline-css": "^3.0.0",
+    "nodemailer": "^6.4.17",
+    "preview-email": "^3.0.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-html-email": "^3.0.0"
+  }
+}

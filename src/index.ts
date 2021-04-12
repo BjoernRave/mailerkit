@@ -1,3 +1,3 @@
-export { initMailer, MailDriver, MailerOptions, Driver } from './init';
-export { renderEmail, EmailWrapper, Space } from './views';
-export { Box, Item, Span, A, Image } from 'react-html-email';
+export { A, Box, Image, Item, Span } from 'react-html-email';
+export { initMailer, MailDriver, MailerOptions } from './init';
+export { EmailWrapper, renderEmail, Space } from './views';

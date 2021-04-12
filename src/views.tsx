@@ -1,10 +1,10 @@
 import inlineCSS from 'inline-css';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { Email } from 'react-html-email';
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
 
-export const renderEmail = async (emailComponent: any) => {
+export const renderEmail = async (emailComponent: ReactNode) => {
   const doctype =
     '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">';
 
@@ -20,7 +20,7 @@ export const renderEmail = async (emailComponent: any) => {
 
   const cleanedStyles =
     styleTag ===
-    '<style data-styled="true" data-styled-version="5.2.1"></style>'
+    '<style data-styled="true" data-styled-version="5.2.3"></style>'
       ? ''
       : styleTag;
 

@@ -1,26 +1,11 @@
-import SES from 'aws-sdk/clients/ses';
-import nodemailer from 'nodemailer';
 import previewEmail from 'preview-email';
 import { MailDriver } from './init';
 
-export const previewDriver: MailDriver = () => ({
-  send: ({ from, ...options }) =>
+export const previewDriver: MailDriver = {
+  send: ({ from, to, ...options }) =>
     previewEmail({
       ...options,
-      from: `"${from.name}" ${from.email}`,
+      from: { address: from.email, name: to.name },
+      to: { address: to.email, name: to.name },
     }),
-});
-
-export const sesDriver: MailDriver = (options: SES.ClientConfiguration) => {
-  const transporter = nodemailer.createTransport({
-    SES: new SES(options),
-  });
-
-  return {
-    send: ({ from, ...options }) =>
-      transporter.sendMail({
-        ...options,
-        from: `"${from.name}" ${from.email}`,
-      }),
-  };
 };
